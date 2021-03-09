@@ -32,7 +32,7 @@ password = "pdccpass"
 database = "pdccschema"
 connmysql = mysql.connector.connect(host=host,
   database=database,user=user,password=password)
-studentmath = pd.read_sql(sqlselect,connmysql)
+studentmath = pd.read_sql(query,connmysql)
 connmysql.close()
 
 studentmath.dtypes
