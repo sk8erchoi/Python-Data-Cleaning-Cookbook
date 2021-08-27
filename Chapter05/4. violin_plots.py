@@ -14,7 +14,8 @@ covidtotals = pd.read_csv("data/covidtotals.csv", parse_dates=["lastdate"])
 covidtotals.set_index("iso_code", inplace=True)
 
 # do a violin plot of sat verbal scores
-sns.violinplot(nls97.satverbal, color="wheat", orient="v")
+#sns.violinplot(nls97.satverbal, color="wheat", orient="v")
+sns.violinplot(data=nls97.loc[:, ['satverbal']], color="wheat", orient="v")
 plt.title("Violin Plot of SAT Verbal Score")
 plt.ylabel("SAT Verbal")
 plt.text(0.08, 780, 'outlier threshold', horizontalalignment='center', size='x-small')
