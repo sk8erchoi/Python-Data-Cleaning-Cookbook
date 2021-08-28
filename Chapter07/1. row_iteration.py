@@ -21,7 +21,7 @@ for row in coviddaily.itertuples():
     casecnt = 0
     prevloc = row.location
   casecnt += row.new_cases
-  
+
 rowlist.append({'location':prevloc, 'casecnt':casecnt})
 len(rowlist)
 rowlist[0:4]
@@ -38,6 +38,7 @@ ltbrazil = ltbrazil.dropna(subset=['temperature'])
 prevstation = 'ZZZ'
 prevtemp = 0
 rowlist = []
+
 for row in ltbrazil.itertuples():
   if (prevstation!=row.station):
     if (prevstation!='ZZZ'):
@@ -45,12 +46,10 @@ for row in ltbrazil.itertuples():
     tempcnt = 0
     stationcnt = 0
     prevstation = row.station
-
   # choose only rows that are within 3 degrees of the previous temperature  
   if ((0 <= abs(row.temperature-prevtemp) <= 3) or (stationcnt==0)):
     tempcnt += row.temperature
     stationcnt += 1
-  
   prevtemp = row.temperature
 
 rowlist.append({'station':prevstation, 'avgtemp':tempcnt/stationcnt, 'stationcnt':stationcnt})
