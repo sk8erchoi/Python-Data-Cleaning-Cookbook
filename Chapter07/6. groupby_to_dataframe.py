@@ -16,7 +16,8 @@ coviddailytotals.head(10)
 
 # create a data frame with average temperatures from each station in Brazil
 ltbrazil = ltbrazil.dropna(subset=['temperature'])
-ltbrazil.loc[103508:104551, ['station','year','month','temperature','elevation','latabs']]
+#ltbrazil.loc[103508:104551, ['station','year','month','temperature','elevation','latabs']]
+ltbrazil[['station','year','month','temperature','elevation','latabs']]
 ltbrazilavgs = ltbrazil.groupby(['station'], as_index=False).\
   agg({'latabs':'first','elevation':'first','temperature':'mean'})
 ltbrazilavgs.head(10)
