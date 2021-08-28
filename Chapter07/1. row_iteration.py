@@ -42,7 +42,8 @@ rowlist = []
 for row in ltbrazil.itertuples():
   if (prevstation!=row.station):
     if (prevstation!='ZZZ'):
-      rowlist.append({'station':prevstation, 'avgtemp':tempcnt/stationcnt, 'stationcnt':stationcnt})
+      rowlist.append({'station':prevstation, 'avgtemp':tempcnt/stationcnt,
+                      'stationcnt':stationcnt})
     tempcnt = 0
     stationcnt = 0
     prevstation = row.station
