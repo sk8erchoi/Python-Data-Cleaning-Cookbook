@@ -1,69 +1,46 @@
-# Python Data Cleaning Cookbook
+# 파이썬 데이터 클렌징 쿡북
 
-<a href="https://www.packtpub.com/product/python-data-cleaning-cookbook/9781800565661?utm_source=github&utm_medium=repository&utm_campaign=9781800208919"><img src="https://static.packt-cdn.com/products/9781800565661/cover/smaller" alt="Learn Amazon SageMaker" height="256px" align="right"></a>
+[파이썬 데이터 클렌징 쿡북](https://wikibook.co.kr/data-cleansing/)(원제: Python Data Cleaning Cookbook)의 예제 코드 저장소입니다.
 
-This is the code repository for [Python Data Cleaning Cookbook](https://www.packtpub.com/product/python-data-cleaning-cookbook/9781800565661?utm_source=github&utm_medium=repository&utm_campaign=9781800565661), published by Packt.
+**지저분한 데이터를 찾아 제거하고 핵심적인 통찰을 얻는 현대적 기법과 파이썬 도구**
 
-**Modern techniques and Python tools to detect and remove dirty data and extract key insights**
+## 도서 소개
 
-## What is this book about?
-Getting clean data to reveal insights is essential, as directly jumping into data analysis without proper data cleaning may lead to incorrect results. This book shows you tools and techniques that you can apply to clean and handle data with Python. You'll begin by getting familiar with the shape of data by using practices that can be deployed routinely with most data sources. Then, the book teaches you how to manipulate data to get it into a useful form. You'll also learn how to filter and summarize data to gain insights and better understand what makes sense and what does not, along with discovering how to operate on data to address the issues you've identified. 
+데이터로부터 통찰을 얻으려면 데이터 정제가 필요하다. 데이터를 적절히 정제하지 않고 곧바로 분석에 들어갔다가는 잘못된 결과를 얻게 될 수 있기 때문이다. 이 책은 파이썬으로 데이터를 다루고 정제할 때 사용할 수 있는 도구와 기법을 보여준다.
 
-Moving on, you'll perform key tasks, such as handling missing values, validating errors, removing duplicate data, monitoring high volumes of data, and handling outliers and invalid dates. Next, you'll cover recipes on using supervised learning and Naive Bayes analysis to identify unexpected values and classification errors, and generate visualizations for exploratory data analysis (EDA) to visualize unexpected values. Finally, you'll build functions and classes that you can reuse without modification when you have new data.
+먼저 통상적인 데이터소스로부터 데이터를 얻고 형태를 확인하는 일상적인 작업을 하는 법을 보여준다. 그런 다음, 데이터를 유용한 형태로 바꾸는 법을 가르친다. 원하는 데이터를 골라내고 요약함으로써 통찰을 얻는 법, 도출된 문제점을 해결하는 법도 알려준다. 이어서 누락값 처리, 오류 검사, 중복 데이터 제거, 대량 데이터 모니터링, 이상값과 잘못된 날짜를 다루는 법으로 진행한다. 지도학습과 나이브 베이즈 분석으로 예상치 못한 값과 분류 오류를 식별하고, 탐색적 데이터 분석(EDA)을 위한 시각화를 통해 예상치 못한 값을 식별한다. 끝으로, 새로운 데이터에 대해서도 수정 없이 재사용할 수 있는 함수와 클래스를 작성한다.
 
-By the end of this Python book, you'll be equipped with all the key skills that you need to clean data and diagnose problems within it.
+이 책을 마친 후에는 데이터를 정제하고 문제를 진단하는 주요 기술을 갖게 될 것이다.
 
-This book covers the following exciting features: 
-* Find out how to read and analyze data from a variety of sources
-* Produce summaries of the attributes of data frames, columns, and rows
-* Filter data and select columns of interest that satisfy given criteria
-* Address messy data issues, including working with dates and missing values
-* Improve your productivity in Python pandas by using method chaining
-* Use visualizations to gain additional insights and identify potential data issues
-* Enhance your ability to learn what is going on in your data
-* Build user-defined functions and classes to automate data cleaning
+**책에서 다루는 주제**
+* 다양한 데이터 소스로부터 데이터를 읽고 분석하는 법
+* 데이터 프레임, 열, 행의 어트리뷰트를 요약하는 법
+* 데이터를 필터링하고 주어진 요건을 충족하는 열을 선택
+* 날짜, 누락값이 있는 데이터 등 지저분한 데이터를 다루기
+* 메서드 체이닝으로 파이썬 판다스 작업 생산성을 향상
+* 시각화를 통해 통찰을 얻고 잠재적인 데이터 이슈를 식별
+* 데이터의 변동을 파악하는 능력을 향상
+* 사용자 정의 함수 및 클래스를 작성해 데이터 정제를 자동화
 
-If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1800565666) today!
 
-<a href="https://www.packtpub.com/?utm_source=github&utm_medium=banner&utm_campaign=GitHubBanner"><img src="https://raw.githubusercontent.com/PacktPublishing/GitHub/master/GitHub.png" alt="https://www.packtpub.com/" border="5" /></a>
+**대상 독자**
 
-## Instructions and Navigations
-All of the code is organized into folders.
+이 책은 지저분하고 중복이 있고 부실한 데이터를 여러 가지 파이썬 도구와 기법을 사용해 다루고자 하는 모든 사람을 대상으로 한다. 이 책은 레시피 방식으로 접근함으로써 독자가 데이터를 정제 및 관리하도록 돕는다. 파이썬 프로그래밍 실무 지식이 있으면 책을 최대한 활용할 수 있다.
 
-The code will look like the following:
-```
-landtemps = pd.read_csv('data/landtempssample.csv',
-    names=['stationid','year','month','avgtemp','latitude',
-           'longitude','elevation','station','countryid','country'],
-    skiprows=1,
-    parse_dates=[['month','year']],
-    low_memory=False)
+### 소프트웨어 및 하드웨어
 
-```
-
-**Following is what you need for this book:**
-This book is for anyone looking for ways to handle messy, duplicate, and poor data using different Python tools and techniques. The book takes a recipe-based approach to help you to learn how to clean and manage data. Working knowledge of Python programming is all you need to get the most out of the book.
-
-With the following software and hardware list you can run all code files present in the book (Chapter 1-10).
-
-### Software and Hardware List
-
-| Chapter  | Software required                                                                    | OS required                        |
+| 장 | 필요한 소프트웨어                                                                    | 필요한 OS                        |
 | -------- | -------------------------------------------------------------------------------------| -----------------------------------|
 | 1 - 10   |   Python 3.6+ (Jupyter Notebook) / Google Colab                               				| Windows, Mac OS X, and Linux (Any) |
 
-We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://static.packt-cdn.com/downloads/9781800565661_ColorImages.pdf).
+이 책의 스크린숏/다이어그램의 컬러 이미지를 다운로드하려면 [이곳을 클릭](https://static.packt-cdn.com/downloads/9781800565661_ColorImages.pdf).
 
-## Errata
- 
-* Page 79, Step 5: **unqiue** _should be_ **unique**
+## 오탈자
 
-### Related products <Other books you may enjoy>
-* Practical Data Analysis Using Jupyter Notebook [[Packt]](https://www.packtpub.com/product/practical-data-analysis-using-jupyter-notebook/9781838826031) [[Amazon]](https://www.amazon.com/dp/B08BNDJJH6)
+[정오표](https://wikibook.co.kr/data-cleansing/#errata)를 참조.
 
-* Hands-On Exploratory Data Analysis with Python [[Packt]](https://www.packtpub.com/product/hands-on-exploratory-data-analysis-with-python/9781789537253) [[Amazon]](https://www.amazon.com/dp/1789537258)
+## 저자/역자 소개
+**마이클 워커(Michael Walker)** : 30년 이상 여러 교육기관에서 데이터 분석가로 일했다. 또한 2006년부터 대학에서 데이터 과학, 연구 방법, 통계, 컴퓨터 프로그래밍을 가르쳤다. 그는 공공 부문과 재단 보고서를 작성하며 분석 결과를 학술지에 발표한다.
 
-## Get to Know the Author
-**Michael Walker**  has worked as a data analyst for over 30 years at a variety of educational institutions. He has also taught data science, research methods, statistics, and computer programming to undergraduates since 2006. He generates public sector and foundation reports and conducts analyses for publication in academic journals.
-
-
+**최용** : 한국방송통신대학교에서 컴퓨터 과학을 전공하고 2000년대 초부터 IT 업계에서 일했다. 은행의 일괄 작업 운영과 서버 운영 자동화를 돕는 외산 소프트웨어의 기술 지원 업무를 주로 했고, 현재는 위키북스에서 교정 업무를 하고 있다.<br>
+저서로 《왕초보를 위한 파이썬》(사이버출판사, 2002), 《예제 중심의 파이썬》(인피니티북스) 등이 있으며, 《파이썬으로 배우는 데이터 과학 입문과 실습》(위키북스), 《익스플로링 라즈베리 파이》(위키북스), 《침투 본능, 해커의 기술》(위키북스), 《웹 애플리케이션 보안》(한빛미디어) 등을 번역했다.
